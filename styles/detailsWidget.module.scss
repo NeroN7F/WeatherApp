@@ -1,0 +1,42 @@
+
+.widgetDetailsContainer {
+  width: 80%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+  margin: 5em auto;
+
+  .separator {
+    font-size: 1.5em;
+  }
+}
+
+.basis {
+  flex-basis: 100%;
+  margin: auto;
+}
+
+.widgetDetail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  font-size: 1.5em;
+  margin: 1.5em 0;
+  cursor: pointer;
+
+  :nth-child(1) {
+    transition: color .5s ease;
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  :nth-child(2) {
+    text-align: end;
+  }
+
+}

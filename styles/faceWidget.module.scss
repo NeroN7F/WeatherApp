@@ -1,0 +1,48 @@
+
+.faceWidgetContainer {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+  position: absolute;
+  bottom: 10em;
+  left: 10em;
+  gap: 5em;
+
+  //grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  color: white;
+  font-weight: bold;
+
+  .faceWidget{
+
+  }
+
+  .widgetData{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin: auto;
+
+    span{
+      font-size: 4em;
+    }
+
+    .dateTitle{
+      font-size: 2em;
+    }
+
+    .conditionTitle{
+      text-align: center;
+    }
+  }
+
+
+  @media screen and (max-width: 640px) {
+    position: relative !important;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    gap: 3em;
+  }
+}
