@@ -9,7 +9,7 @@ const Widgets = async (props: { city: string }) => {
     const fetchWeather = async () => {
         const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_API_KEY} &q=${props.city}&aqi=no`, {
             next: {
-                revalidate: 20
+                revalidate: 10
             }
         })
         return res.json()

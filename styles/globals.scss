@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --bg-sky: #1B5BF7
+  --bg-shade: rgba(255, 255, 255, .5)
 }
 
 body {
@@ -14,6 +14,10 @@ body {
   height: 100vh;
 
   @media screen and (max-width: 640px) {
+    height: auto;
+  }
+
+  @media screen and (max-height: 730px) {
     height: auto;
   }
 }
@@ -141,12 +145,12 @@ a {
 }
 
 .activeStripe {
-  background-color: rgba(255,255,255, .5) !important;
+  background-color: rgba(255, 255, 255, .5) !important;
 }
 
 
 .button {
-  background-color: var(--bg-sky);
+  background-color: var(--bg-shade);
   color: white;
   border-radius: 8px !important;
   transition: .5s;
@@ -157,11 +161,11 @@ a {
     @extend .button;
 
     background-color: transparent;
-    border: 1px solid var(--bg-sky);
+    border: 1px solid var(--bg-shade);
     color: var(--bg-sky);
 
     &:hover {
-      background-color: var(--bg-sky) !important;
+      background-color: var(--bg-shade) !important;
       color: white;
     }
   }
@@ -174,6 +178,6 @@ a {
   }
 
   &:hover {
-    background-color: rgba(27, 91, 247, .8);
+    background-color: white;
   }
 }
