@@ -2,6 +2,8 @@ import '../../styles/globals.scss'
 
 import type {Metadata} from 'next'
 import Widgets from "@/componets/Organisms/Widgets";
+import GeoLocation from "@/componets/Atoms/GeoLocation";
+import Provider from "@/componets/Atoms/Provider";
 
 export const metadata: Metadata = {
     title: {
@@ -14,7 +16,7 @@ export default function RootLayout({
                                        children, params
                                    }: {
     children: React.ReactNode,
-    params: {city: string}
+    params: { city: string }
 }) {
     return (
         <html lang="en">
@@ -25,6 +27,10 @@ export default function RootLayout({
                 <Widgets city={params.city}/>
             </div>
         </section>
+
+        <Provider>
+            <GeoLocation/>
+        </Provider>
         </body>
         </html>
     )

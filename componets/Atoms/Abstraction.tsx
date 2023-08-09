@@ -1,12 +1,11 @@
-import {ReactNode} from "react";
 import {weatherGradient} from "@/utils/weatherGradient";
 
-// To Avoid SSR Deoption
+import {ReactNode} from "react";
 
 const Abstraction = (props: { children: ReactNode, condition: number }) => {
 
     return (
-        <div className={`content ${weatherGradient(props.condition)}`}>
+        <div className={`content`} style={{background: weatherGradient(props.condition)}}>
             {props.children}
         </div>
     )

@@ -1,3 +1,5 @@
+import {Suspense} from "react";
+
 import Search from "@/componets/Molecules/Search";
 import DetailsWidget from "@/componets/Molecules/Widget/Details";
 import ListWidget from "@/componets/Molecules/Widget/List";
@@ -19,7 +21,10 @@ const Widgets = async (props: { city: string }) => {
         <>
             <Search/>
             <ListWidget currentCity={props.city}/>
-            <DetailsWidget cloudy={data.current.cloud} humidity={data.current.humidity} rain={data.current.precip_mm} wind={data.current.wind_kph}/>
+            <Suspense>
+                <DetailsWidget cloudy={data?.current?.cloud!} humidity={data?.current?.humidity}
+                               rain={data?.current?.precip_mm!} wind={data?.current?.wind_kph!}/>
+            </Suspense>
         </>
 
     )

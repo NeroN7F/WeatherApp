@@ -1,5 +1,6 @@
-import styles from '@/styles/search.module.scss'
 import Image from "next/image";
+
+import styles from '@/styles/search.module.scss'
 
 import searchIcon from '@/public/assets/icons/search.png'
 

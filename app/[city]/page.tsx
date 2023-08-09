@@ -18,14 +18,14 @@ export default async function Page({params}: { params: { city: string } }) {
 
     const data: Weather = await fetchWeather()
 
-    console.log(data)
-
     return (
-        <Abstraction condition={data?.current.condition.code}>
+        <Abstraction condition={data?.current?.condition?.code}>
             <p className='title'>the.weather</p>
 
             <Suspense>
-                <FaceWidget degrees={data?.current?.temp_c} city={data?.location?.name} condition={data?.current?.condition?.text} date={data?.location?.localtime} icon={data.current.condition.icon}/>
+                <FaceWidget degrees={data?.current?.temp_c} city={data?.location?.name}
+                            condition={data?.current?.condition?.text} date={data?.location?.localtime}
+                            icon={data?.current?.condition?.icon}/>
             </Suspense>
         </Abstraction>
     )

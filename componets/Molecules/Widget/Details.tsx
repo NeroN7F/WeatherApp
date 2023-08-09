@@ -1,11 +1,11 @@
 import React from "react";
 
 import WidgetDetail from "@/componets/Atoms/Widget/Detail";
-
-import styles from '@/styles/detailsWidget.module.scss'
 import Stripe from "@/componets/Atoms/Stripe";
 
-type Details = {
+import styles from '@/styles/detailsWidget.module.scss'
+
+export type Details = {
     cloudy: number,
     humidity: number,
     wind: number,

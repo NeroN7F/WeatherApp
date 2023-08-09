@@ -9,7 +9,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-items: center;
-  margin: 5em auto;
+  margin: 6em auto 3em auto;
 }
 
 .searchButtonContainer {
@@ -20,10 +20,6 @@
   height: 130px;
   width: 130px;
   transition: color .5s ease;
-
-  &:hover {
-    background-color: rgba(169, 206, 225, 0.5);
-  }
 
   @media screen and (max-width: 640px) {
     display: none;
@@ -37,7 +33,7 @@
   height: 35px;
   width: 100%;
   color: rgba(255, 255, 255, .5);
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 //input{

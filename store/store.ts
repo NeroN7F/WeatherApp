@@ -1,7 +1,10 @@
+import { configureStore } from '@reduxjs/toolkit';
+import userLocationReducer from './reducers';
 
-import {configureStore} from "@reduxjs/toolkit";
+const store = configureStore({
+    reducer: {
+        userLocation: userLocationReducer,
+    },
+});
 
-
-export const store = configureStore({
-    reducer:{}
-})
+export default store;

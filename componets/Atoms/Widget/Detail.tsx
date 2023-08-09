@@ -1,13 +1,15 @@
-import styles from '@/styles/detailsWidget.module.scss'
+import Link from "next/link";
 
 import {ReactNode} from "react";
-import Link from "next/link";
+
+import styles from '@/styles/detailsWidget.module.scss'
 
 const WidgetDetail = (props: { children: ReactNode, data?: string | number, link?: string, currentCity?: string }) => {
 
     return (
         <div className={styles.widgetDetail}>
-            {!props.link ? <p>{props.children}</p> : <Link href={props.link} style={props.link === props.currentCity ? {color: 'rgba(255,255, 255, .5)'} : {} } >{props.children}</Link>}
+            {!props.link ? <p>{props.children}</p> : <Link href={props.link}
+                                                           className={props.link.toLowerCase() === props.currentCity?.toLowerCase() ? 'active' : ''}>{props.children}</Link>}
             {props.data ? <p>{props.data}</p> : <></>}
         </div>
     )

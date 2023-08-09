@@ -8,41 +8,55 @@
   bottom: 10em;
   left: 10em;
   gap: 5em;
-
-  //grid-template-columns: repeat(4, minmax(0, 1fr));
-
   color: white;
-  font-weight: bold;
 
-  .faceWidget{
-
+  .faceWidget {
+    font-weight: bold;
   }
 
-  .widgetData{
+  .widgetData {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin: auto;
 
-    span{
+    .title {
       font-size: 4em;
+      font-weight: bold;
     }
 
-    .dateTitle{
-      font-size: 2em;
+    .dateTitle {
+      font-size: 1.5em;
+      color: rgba(255, 255, 255, .5);
     }
 
-    .conditionTitle{
+    .conditionTitle {
       text-align: center;
     }
   }
 
+  @media screen and (max-width: 1600px) {
+    bottom: 5em;
+    left: 5em;
+
+  }
 
   @media screen and (max-width: 640px) {
     position: relative !important;
     justify-content: center;
     left: 0;
     bottom: 0;
-    text-align: center;
     gap: 3em;
+    padding: 1em;
+
+    .widgetData {
+      span {
+        font-size: 3em;
+      }
+
+      .dateTitle {
+        width: 80%;
+      }
+
+    }
   }
 }

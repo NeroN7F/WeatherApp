@@ -27,20 +27,20 @@ input:focus {
   outline: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
   color: rgba(255, 255, 255, .5);
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
   color: rgba(255, 255, 255, .5)
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
   color: rgba(255, 255, 255, .5);
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -66,10 +66,28 @@ a{
 
 .xl2 {
   font-size: 8em;
+
+  @media screen and (max-width: 640px) {
+    font-size: 6em;
+  }
 }
 
 .m-auto {
   margin: auto;
+}
+
+.active {
+  color: white !important;
+}
+
+.error {
+  color: lightcoral;
+  font-weight: bold;
+  font-size: 12em;
+
+  @media screen and (max-width: 640px) {
+    font-size: 4em;
+  }
 }
 
 .home {
@@ -107,19 +125,9 @@ a{
 .content {
   flex-basis: 70%;
 
-
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1280px) {
     flex-basis: 100%
   }
-
-  //@media screen and (max-width: 768px) {
-  //  flex-basis: 70%
-  //}
-  //
-  //@media screen and (max-width: 1280px) {
-  //  flex-basis: 60%
-  //}
 }
 
 .widgets {
@@ -127,35 +135,23 @@ a{
   background-color: #2b6187;
   background-image: linear-gradient(180deg, #2b6187 0%, #718390 99%);
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1280px) {
     flex-basis: 100%
   }
-
-  //@media screen and (max-width: 768px) {
-  //  flex-basis: 30%
-  //}
-  //
-  //@media screen and (max-width: 1280px) {
-  //  flex-basis: 40%
-  //}
 }
 
-.activeStripe{
-  background-color: white !important;
-  transition: color .5s ease !important;
+.activeStripe {
+  background-color: rgba(255,255,255, .5) !important;
 }
 
 
 .button {
-  @apply py-[2px];
-  @apply px-[24px];
-  @apply lg:py-[12px];
-  @apply lg:px-[32px];
-
   background-color: var(--bg-sky);
   color: white;
   border-radius: 8px !important;
   transition: .5s;
+  border: 0;
+  padding: 4px 24px;
 
   &-outlined {
     @extend .button;
@@ -180,28 +176,4 @@ a{
   &:hover {
     background-color: rgba(27, 91, 247, .8);
   }
-
-  .sunny {
-    background: linear-gradient(135deg, #FDB813 0%, #EEC145 100%);
-  }
-
-  .partly-cloudy {
-    background-color: #2c8bcb;
-    background-image: linear-gradient(180deg, #2c8bcb 0%, #a4cae1 99%);
-  }
-
-  .mostly-cloudy {
-    background: linear-gradient(135deg, #6E7E88 0%, #9CA5AB 100%);
-  }
-
-  .overcast {
-    background: linear-gradient(135deg, #6E7E88 0%, #9CA5AB 100%);
-  }
-
-  .mist-fog {
-    background: linear-gradient(135deg, #AAB7B8 0%, #D3D7D8 100%);
-  }
-
-
-
 }
